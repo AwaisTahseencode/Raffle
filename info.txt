@@ -1,0 +1,37 @@
+we are making the address payable cuz we have to pay the winner once the random picker is available
+Now when we push the msg.sender into the array we should also make it payable otherwise it ll not work
+so typeCast it before entering the array
+--------------------------------------------------------
+Events: When we want to update the dynamic array or object we have to emit the event
+
+Events allows us to "print" this information into a log instead of savinf it into the gas consuming 
+storage variable
+-----------
+logs live in such dataStructure so smart contracts cant excess it thats y they are gas efficient
+=======================
+when we emit the event there are 2 types of params 
+1)Indexed params
+2)NonIndexed params
+Indexed params are also called topics
+we can have maximum 3 indexed params 
+------------------------------
+Index params are much easier to search for and much easier for query
+NI are hard to search cuz they have abi encoded and its hard to decode them
+=======================================
+Data is encoded abi version/data but if you have the abi its very easy to decode the data
+NI variables costs less gas 
+--------------------------
+keyhash is the hash that determines the gas limit of our requested random number
+======================================
+ChainLink VRF is 2 process transactionNetwork
+====================================
+VRFV2 constructor params is the address of the contract which does our random number confirmation
+===================================================
+If we want to trigger the contract automatically after sometime with smsort of params or timeInterval we use 
+ChainLink keepers to achieve automaticity 
+======================
+To use keepers we have to do the 2 steps 
+1)Verify with 2 methods that contract are compatible 
+2)We have to register the contract with upkeep for the chainLink keeper network
+===================
+Mostly ofchain computation happens in checkUpKeep,this runs offline by a node of chainLink keeper network
