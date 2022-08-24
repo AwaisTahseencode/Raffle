@@ -4,3 +4,4 @@ cache
 .env
 deployments
 yarn-error.log
+package-lock.json
